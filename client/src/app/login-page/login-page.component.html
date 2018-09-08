@@ -1,0 +1,37 @@
+<div class="row">
+  <form class="col s4"
+        [formGroup]="form"
+        (ngSubmit)="submit()">
+    <div class="row">
+      <div class="input-field col s12">
+        <input
+          type="email"
+          class="validate"
+          formControlName="email">
+        <label for="email">Email</label>
+        <span *ngIf="form.get('email').dirty && form.get('email').invalid">
+          <span *ngIf="form.get('email').errors['required']">Поле обязательно к заполнению</span>
+          <span *ngIf="form.get('email').errors['email']">Поле не соответствует формату email</span>
+        </span>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <input
+          type="password"
+          class="validate"
+          formControlName="password">
+        <label for="password">Password</label>
+        <span *ngIf="form.get('password').dirty && form.get('password').invalid">
+          <span *ngIf="form.get('password').errors['required']">Поле обязательно к заполнению</span>
+          <span *ngIf="form.get('password').errors['minlength']">Поле должно содержать больше 3-х символов</span>
+        </span>
+      </div>
+    </div>
+    <button
+      type="submit"
+      class="waves-effect waves-light btn"
+      [disabled]="form.invalid && form.disabled">Login
+    </button>
+  </form>
+</div>

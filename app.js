@@ -10,7 +10,7 @@ const authRouter = require('./routes/auth');
 
 app.use('/uploads', express.static('uploads'));
 
-mongoose.connect(keys.mongoUrl)
+mongoose.connect(keys.mongoUrl, { useNewUrlParser: true })
     .then(() => console.log('Mongodb is connected...'))
     .catch((error) => console.error(error));
 
