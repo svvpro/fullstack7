@@ -16,7 +16,7 @@ export class TokenInterceptor implements HttpInterceptor {
         setHeaders: {
           Authorization: this.authService.getToken()
         }
-      });
+      })
     }
 
 

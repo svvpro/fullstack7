@@ -42,6 +42,7 @@ export class AuthService {
 
   logout(): void {
     if (this.isAuthentificated()) {
+      localStorage.clear();
       this.setToken(null);
     }
   }

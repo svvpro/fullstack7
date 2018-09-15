@@ -1,0 +1,42 @@
+<h3>{{isNew ? 'Создать' : 'Редактировать'}} категорию</h3>
+
+<div class="row">
+  <button class="waves-effect red btn" (click)="categoryDelete()">Delete</button>
+</div>
+
+<div class="row">
+  <form [formGroup]="form" (ngSubmit)="submit()">
+    <div class="row">
+      <div class="input-field col s6">
+        <input
+          id="name"
+          type="text"
+          class="validate"
+          formControlName="name">
+        <label for="name">Name</label>
+      </div>
+    </div>
+    <div class="row">
+      <input #input
+             (change)="onFileUploaded($event)"
+             type="text"
+             style="display: none"
+             type="file">
+
+      <div class="col s12" *ngIf="imagePreview">
+        <img [src]="imagePreview" height="200">
+      </div>
+
+    </div>
+    <div class="row">
+      <button
+        class="waves-effect waves-light btn"
+        type="submit"
+        [disabled] = "form.invalid || form.disabled">Добавить категорию</button>
+    </div>
+  </form>
+  <button
+    class="waves-effect waves-light btn"
+    (click)="showLoadForm()"
+  >Загрузить изображение</button>
+</div>

@@ -10,6 +10,14 @@ import { AuthLayoutComponent } from './shared/layouts/auth-layout/auth-layout.co
 import { SiteLayoutComponent } from './shared/layouts/site-layout/site-layout.component';
 import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {TokenInterceptor} from "./shared/classes/interceptor.service";
+import { OverviewPageComponent } from './overview-page/overview-page.component';
+import { CarsPageComponent } from './cars-page/cars-page.component';
+import { AboutPageComponent } from './about-page/about-page.component';
+import { ContactsPageComponent } from './contacts-page/contacts-page.component';
+import { CategoriesPageComponent } from './categories-page/categories-page.component';
+import { LoaderComponent } from './shared/components/loader/loader.component';
+import { CategoryFormComponent } from './categories-page/category-form/category-form.component';
+
 
 @NgModule({
   declarations: [
@@ -17,7 +25,14 @@ import {TokenInterceptor} from "./shared/classes/interceptor.service";
     LoginPageComponent,
     RegisterPageComponent,
     AuthLayoutComponent,
-    SiteLayoutComponent
+    SiteLayoutComponent,
+    OverviewPageComponent,
+    CarsPageComponent,
+    AboutPageComponent,
+    ContactsPageComponent,
+    CategoriesPageComponent,
+    LoaderComponent,
+    CategoryFormComponent,
   ],
   imports: [
     BrowserModule,

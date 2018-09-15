@@ -6,4 +6,8 @@ export class MaterialService {
     M.toast({html: message});
   }
 
+  static updateTextFields() {
+    M.updateTextFields();
+  }
+
 }

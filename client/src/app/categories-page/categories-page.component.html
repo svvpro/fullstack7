@@ -1,0 +1,16 @@
+<a class="waves-effect waves-light btn" routerLink="/categories/new">Добавить категорию</a>
+
+<div class="row">
+  <div class="col s12" *ngIf="categories$ | async as categories; else loader">
+    <ul class="collection" *ngIf="categories.length !== 0; else empty">
+      <li *ngFor="let category of categories " class="collection-item" routerLinkActive="active"><a [routerLink]="['/categories', category._id]">{{category.name}}</a></li>
+    </ul>
+  </div>
+</div>
+
+<ng-template #loader>
+  <app-loader></app-loader>
+</ng-template>
+<ng-template #empty>
+  <h3>Списко категорий пуст</h3>
+</ng-template>
