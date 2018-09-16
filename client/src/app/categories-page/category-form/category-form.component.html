@@ -32,11 +32,21 @@
       <button
         class="waves-effect waves-light btn"
         type="submit"
-        [disabled] = "form.invalid || form.disabled">Добавить категорию</button>
+        [disabled]="form.invalid || form.disabled">Добавить категорию
+      </button>
     </div>
   </form>
   <button
     class="waves-effect waves-light btn"
     (click)="showLoadForm()"
-  >Загрузить изображение</button>
+  >Загрузить изображение
+  </button>
 </div>
+
+<hr>
+<app-position-form
+  *ngIf="category._id"
+  [categoryId]="category._id"
+>
+
+</app-position-form>

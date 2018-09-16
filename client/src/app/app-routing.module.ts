@@ -29,7 +29,7 @@ const routes: Routes = [
         {path: 'categories', component: CategoriesPageComponent},
         {path: 'categories/new', component: CategoryFormComponent},
         {path: 'categories/:id', component: CategoryFormComponent},
-        {path: 'contacts', component: ContactsPageComponent}
+        {path: 'contacts', component: ContactsPageComponent},
       ]
   }
 ];

@@ -17,6 +17,7 @@ import { ContactsPageComponent } from './contacts-page/contacts-page.component';
 import { CategoriesPageComponent } from './categories-page/categories-page.component';
 import { LoaderComponent } from './shared/components/loader/loader.component';
 import { CategoryFormComponent } from './categories-page/category-form/category-form.component';
+import { PositionFormComponent } from './categories-page/category-form/position-form/position-form.component';
 
 
 @NgModule({
@@ -33,6 +34,7 @@ import { CategoryFormComponent } from './categories-page/category-form/category-
     CategoriesPageComponent,
     LoaderComponent,
     CategoryFormComponent,
+    PositionFormComponent,
   ],
   imports: [
     BrowserModule,

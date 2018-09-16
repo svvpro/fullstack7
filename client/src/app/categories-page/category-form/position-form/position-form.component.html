@@ -1,0 +1,59 @@
+<a class="waves-effect waves-light btn" (click)="onCreatePosition()">Добавить позицию</a>
+
+<div class="row">
+  <div class="col s12" *ngIf="positions; else loader">
+    <ul class="collection" *ngIf="positions.length !== 0; else empty">
+      <li *ngFor="let position of positions" class="collection-item" routerLinkActive="active"><a (click)="onUpdatePosition(position)"
+        [routerLink]="['/positions', position._id]">{{position.name}} Стоимость: {{position.coast}} грн.</a>
+        <button class="waves-effect red btn" (click)="onDeletePosition(position)">Delete</button>
+      </li>
+    </ul>
+    <ng-template #empty>
+      <h3>Ниодной позиции не найдено</h3>
+    </ng-template>
+  </div>
+
+  <ng-template #loader>
+    <app-loader></app-loader>
+  </ng-template>
+
+</div>
+
+
+<div class="modal" #modal>
+  <div class="modal-content">
+    <h4>Modal Header</h4>
+    <div class="row">
+      <form [formGroup]="form" (ngSubmit)="submit()">
+        <div class="row">
+          <div class="input-field col s6">
+            <input
+              id="name"
+              type="text"
+              class="validate"
+              formControlName="name">
+            <label for="name">Name</label>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="input-field col s6">
+            <input
+              id="coast"
+              type="text"
+              class="validate"
+              formControlName="coast">
+            <label for="coast">Coast</label>
+          </div>
+        </div>
+        <div class="row">
+          <button
+            class="waves-effect waves-light btn"
+            type="submit"
+            [disabled]="form.invalid || form.disabled">Добавить позицию
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

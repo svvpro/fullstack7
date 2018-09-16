@@ -9,6 +9,13 @@ export interface Category {
   _id?: string
 }
 
+export interface Position {
+  name: string,
+  coast: number,
+  category: string,
+  _id?: string
+}
+
 export interface  Message {
   message: string
 }

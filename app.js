@@ -8,6 +8,7 @@ const passport = require('passport');
 const carRouter = require('./routes/car');
 const authRouter = require('./routes/auth');
 const categoryRouter = require('./routes/category');
+const positionRouter = require('./routes/position');
 
 app.use('/uploads', express.static('uploads'));
 
@@ -28,6 +29,7 @@ require('./middleware/passport')(passport);
 app.use('/api/cars', carRouter);
 app.use('/api/auth', authRouter);
 app.use('/api/categories', categoryRouter);
+app.use('/api/positions', positionRouter);
 
 
 module.exports = app;
